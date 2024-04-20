@@ -6,7 +6,7 @@ export default [
     title: "Question 1",
     points: 10,
     question: "How much is 2 + 2?",
-    options: [
+    choices: [
       {
         text: "A. 4",
         isCorrect: true,
