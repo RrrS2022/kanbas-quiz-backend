@@ -2,42 +2,62 @@ export default [
   {
     _id: "M101",
     quiz: "Q101",
-    type: "MC",
+    questionType: "MC",
     title: "Question 1",
     points: 10,
     question: "How much is 2 + 2?",
-    choice: [
+    options: [
       {
-        option1: "A",
-        option2: "B",
-        option3: "C",
+        text: "A. 4",
+        isCorrect: true,
+      },
+      {
+        text: "B. 5",
+        isCorrect: false,
+      },
+      {
+        text: "C. 6",
+        isCorrect: false,
       },
     ],
   },
   {
     _id: "B101",
     quiz: "Q101",
-    type: "BLANKS",
+    questionType: "BLANKS",
     title: "Question 2",
     points: 10,
     question: "2 + 2 = ",
-    choice: [
+    choices: [
       {
-        blank1: "4",
+        options: [
+          {
+            text: "4",
+            isCorrect: true,
+          },
+        ],
       },
     ],
   },
   {
     _id: "T101",
     quiz: "Q101",
-    type: "TF",
+    questionType: "TF",
     title: "Question 3",
     points: 10,
     question: "2 + 2 = ",
-    choice: [
+    choices: [
       {
-        true: "4",
-        false: "5",
+        options: [
+          {
+            text: "4",
+            isCorrect: true,
+          },
+          {
+            text: "5",
+            isCorrect: false,
+          },
+        ],
       },
     ],
   },
