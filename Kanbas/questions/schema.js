@@ -25,9 +25,8 @@ const questionSchema = new mongoose.Schema(
     title: { type: String },
     points: { type: Number },
     question: { type: String },
-    choices: {
-      options: [{ text: String, isCorrect: Boolean }],
-    },
+    options: [{ type: String }],
+    answers : [{ type: String }]
   },
   { collection: "questions" }
 );
