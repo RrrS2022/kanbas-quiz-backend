@@ -2,15 +2,13 @@ import db from "../Database/index.js";
 function QuizRoutes(app) {
   app.put("/api/quizzes/:quiz", (req, res) => {
     const { quiz } = req.params;
-    const quizIndex = db.quizzes.findIndex((m) => m._id === quiz);
-    if (quizIndex === -1) {
-      return res.status(404).send({ error: "Quiz not found" });
-    }
+    const quizIndex = db.quizzes.findIndex(
+      (m) => m._id === quiz);
     db.quizzes[quizIndex] = {
       ...db.quizzes[quizIndex],
-      ...req.body,
+      ...req.body
     };
-    res.send(db.quizzes[quizIndex]); 
+    res.sendStatus(204);
   });
   
   app.delete("/api/quizzes/:quiz", (req, res) => {
