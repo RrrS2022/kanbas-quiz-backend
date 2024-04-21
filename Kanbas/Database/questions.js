@@ -7,7 +7,7 @@ export default [
     points: 10,
     question: "How much is 2 + 2 ?",
     options: ["A. 4", "B. 5", "C. 6"],
-    answers : ["A"]
+    answers : "A"
   },
   {
     _id: "B101",
@@ -17,7 +17,7 @@ export default [
     points: 10,
     question: "2 + 2 = ",
     options: [],
-    answers : ["4"]
+    answers : "4"
   },
   {
     _id: "T101",
@@ -27,6 +27,6 @@ export default [
     points: 10,
     question: "2 + 2 = 4",
     options: ["True", "False"],
-    answers : ["True"]
+    answers : "True"
   },
 ];
