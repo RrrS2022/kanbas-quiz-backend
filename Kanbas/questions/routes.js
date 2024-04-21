@@ -1,13 +1,12 @@
 import db from "../Database/index.js";
 
 function QuestionRoutes(app) {
-    app.put("/api/quizzes/:quizId", (req, res) => {
-      const { quizId } = req.params;
-      const questionIndex = db.questions.findIndex((q) => q._id === quizId);
-      db.questions[questionIndex] = {
-        ...db.questions[questionIndex],
-        ...req.body,
-      };
+    app.put("/api/quizzes/:quizId/questions/:questionId", (req, res) => {
+      const { quizId, questionId } = req.params;
+      const question = req.body;
+      db.questions = db.questions.map((q) =>
+        q._id === questionId ? { ...q, ...question } : q
+      );
       res.sendStatus(204);
     });
   

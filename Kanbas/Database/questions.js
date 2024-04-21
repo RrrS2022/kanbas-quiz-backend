@@ -7,7 +7,7 @@ export default [
     points: 10,
     question: "How much is 2 + 2 ?",
     options: ["A. 4", "B. 5", "C. 6"],
-    answers : "A"
+    answers : "A. 4"
   },
   {
     _id: "B101",
@@ -16,7 +16,7 @@ export default [
     title: "Question 2",
     points: 10,
     question: "2 + 2 = ",
-    options: [],
+    options: ["4"],
     answers : "4"
   },
   {
