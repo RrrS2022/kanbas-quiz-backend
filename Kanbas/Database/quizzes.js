@@ -1,4 +1,27 @@
 export default [
+  // {
+  //   courseId: "RS101",
+  //   title: "Propulsion quiz",
+  //   type:  "Graded Quiz",
+  //   points: 10,
+  //   questionNumber: 10,
+  //   published: true,
+  //   group:  "Quizzes",
+  //   shuffleAnswers: true,
+  //   timelimit: 20,
+  //   mutipleAttempts: false,
+  //   showAnswers: "Immediately",
+  //   accessCode: "123456",
+  //   oneQuestionataTime: true,
+  //   webCam: false,
+  //   lockQuestion: false,
+  //   dueDate: "2024-03-15",
+  //   availableFromDate: "2024-02-15",
+  //   availableUntilDate: "2024-03-15",
+  //   responses: "Always",
+  //   viewResult: false,
+  // },
+
   {
     _id: "6557fcb7a11aca237708374b1",
     title: "Propulsion quiz",

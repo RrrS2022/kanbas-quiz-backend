@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema({
     courseId: {type: String, required: true},
-    quizName: {type: String, required: true},
-    quizType: {
+    title: {type: String, required: true},
+    type: {
         type: String,
         enum: ["Graded Quiz", "Practice Quiz", "Graded Survey", "Ungraded Survey"],
         required:true,
@@ -10,20 +10,22 @@ const quizSchema = new mongoose.Schema({
     points: {type: Number, required: true},
     questionNumber: {type: number, requried: true},
     published: {type: Boolean, required: true},
-    assignmentGroup: {type: String, 
+    group: {type: String, 
         enum: ["Quizzes", "Exams", "Assignments", "Project"],
         default: "Quizzes"},
     shuffleAnswers: {type: Boolean, default: true},
-    timeLimit: {type: Number, default: 20},
+    timelimit: {type: Number, default: 20},
     mutipleAttempts: {type: Boolean, default: false},
-    showCorrectAnwers: {type: Boolean},
+    showAnswers: {type: String},
     accessCode: {type: String},
     oneQuestionataTime: {type: Boolean, default: true},
-    webcamRequired: {type: Boolean, default: false},
-    lockQuestionAfterAnswering: {type: Boolean, default: false},
+    webCam: {type: Boolean, default: false},
+    lockQuestion: {type: Boolean, default: false},
     dueDate: {type: Date},
-    availableDate: {type: Date},
-    untilDate: {type: Date},
+    availableFromDate: {type: Date},
+    availableUntilDate: {type: Date},
+    responses: {type: String},
+    viewResult: {type: Boolean},
   },
   { collection: "quizzes" });
 export default quizSchema;
