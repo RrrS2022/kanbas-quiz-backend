@@ -6,7 +6,7 @@ export const createQuiz = (quiz) => {
     return quizModel.create(course);
 };
 export const findAllQuizzes = () => quizModel.find();
-export const findQuizById = (id) => quizModel.find({id});
+export const findQuizById = (quizId) => quizModel.findById(quizId);
 export const findQuizByName = (quizName) => quizModel.findOne({quizName});
 export const updateQuiz = (id, quiz) =>
     quizModel.updateOne({ _id: id }, { $set: quiz });
