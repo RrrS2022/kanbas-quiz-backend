@@ -1,9 +1,10 @@
 import * as dao from "./dao.js"
 
 export default function QuizRoutes(app) {
-  
+
   const findQuizById = async (req, res) => {
-    const quiz = await dao.findQuizById(req.params.quizId);
+    const {courseId, quizId} = req.params;
+    const quiz = await dao.findQuizById(quizId);
     res.json(quiz);
 };
 
@@ -36,7 +37,7 @@ export default function QuizRoutes(app) {
   app.get("/api/courses/:courseId/quizzes/:quizId", findQuizById);
   app.get("/api/courses/:courseId/quizzes", findQuizzesForCourse);
   app.post("/api/courses/:courseId/quizzes", createQuiz);
-  app.put("/api/quizzes/:quizId", updateQuiz);
+  app.put("/api/quizzes/:quizId/editor", updateQuiz);
   app.delete("/api/quizzes/:quizId", deleteQuiz);
-  
+
 }
