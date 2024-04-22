@@ -1,13 +1,13 @@
-import quizModel from "./model";
+import model from "./model.js";
 
 //CURD
 export const createQuiz = (quiz) => {
     //delete quiz._id;
-    return quizModel.create(course);
+    return model.create(quiz);
 };
-export const findAllQuizzes = () => quizModel.find();
-export const findQuizById = (id) => quizModel.find({id});
-export const findQuizByName = (quizName) => quizModel.findOne({quizName});
+export const findAllQuizzes = () => model.find();
+export const findQuizById = (id) => model.find({_id: id});
+export const findQuizByName = (quizName) => model.findOne({quizName});
 export const updateQuiz = (id, quiz) =>
-    quizModel.updateOne({ _id: id }, { $set: quiz });
-export const deleteQuiz = (id) => quizModel.deleteOne({ _id: id });
+    model.updateOne({ _id: id }, { $set: quiz });
+export const deleteQuiz = (id) => model.deleteOne({ _id: id });
