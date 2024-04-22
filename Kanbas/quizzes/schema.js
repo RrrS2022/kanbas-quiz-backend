@@ -8,7 +8,7 @@ const quizSchema = new mongoose.Schema({
         required:true,
         default: "Graded Quiz"},
     points: {type: Number, required: true},
-    questionNumber: {type: number, requried: true},
+    questionNumber: {type: Number, requried: true},
     published: {type: Boolean, required: true},
     group: {type: String, 
         enum: ["Quizzes", "Exams", "Assignments", "Project"],
