@@ -1,9 +1,9 @@
-import quizModel from "./model";
+import quizModel from "./model.js";
 
 //CURD
 export const createQuiz = (quiz) => {
     //delete quiz._id;
-    return quizModel.create(course);
+    return quizModel.create(quiz);
 };
 export const findAllQuizzes = () => quizModel.find();
 export const findQuizById = (quizId) => quizModel.findById(quizId);
