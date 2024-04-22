@@ -10,16 +10,6 @@ export default [
     answers : "A. 4"
   },
   {
-    _id: "B101",
-    quiz: "Q101",
-    questionType: "BLANKS",
-    title: "Question 2",
-    points: 10,
-    question: "2 + 2 = ",
-    options: ["4"],
-    answers : "4"
-  },
-  {
     _id: "T101",
     quiz: "Q101",
     questionType: "TF",
@@ -28,5 +18,15 @@ export default [
     question: "2 + 2 = 4",
     options: ["True", "False"],
     answers : "True"
+  },
+  {
+    _id: "B101",
+    quiz: "Q101",
+    questionType: "BLANKS",
+    title: "Question 2",
+    points: 10,
+    question: "2 + 2 = ",
+    options: ["4"],
+    answers : "4"
   },
 ];
