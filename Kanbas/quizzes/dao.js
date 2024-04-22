@@ -2,7 +2,7 @@ import model from "./model.js";
 
 //CURD
 export const createQuiz = (quiz) => {
-    //delete quiz._id;
+    // delete quiz._id;
     return model.create(quiz);
 };
 export const findAllQuizzes = (courseId) => model.find({ courseId: courseId });

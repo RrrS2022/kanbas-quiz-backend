@@ -15,7 +15,7 @@ export default function QuizRoutes(app) {
 
   const createQuiz = async (req, res) => {
     const { courseId } = req.params;
-    const newQuiz = { ...req.body, course: courseId };
+    const newQuiz = { ...req.body, courseId: courseId, _id: new Date().getTime().toString() };
     const quiz = await dao.createQuiz(newQuiz);
     res.json(quiz);
 };
