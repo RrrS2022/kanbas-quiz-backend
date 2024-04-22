@@ -33,5 +33,14 @@ function QuizRoutes(app) {
     const quizzes = db.quizzes.filter((m) => m.course === course);
     res.send(quizzes);
   });
+
+  app.get("/api/quizzes/:quizId", (req, res) => {
+    const { quizId } = req.params;
+    const quiz = db.quizzes.find((quiz) => quiz._id === quizId);
+    if (!quiz) {
+      return res.status(404).send({ error: 'Quiz not found' });
+    }
+    res.send(quiz);
+  });
 }
 export default QuizRoutes;
