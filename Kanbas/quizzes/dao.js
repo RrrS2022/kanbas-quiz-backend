@@ -10,4 +10,4 @@ export const findQuizById = (quizId) => model.findById(quizId);
 export const findQuizByName = (quizName) => model.findOne({quizName});
 export const updateQuiz = (id, quiz) =>
     model.updateOne({ _id: id }, { $set: quiz });
-export const deleteQuiz = (id) => model.deleteOne({ _id: id });
+export const deleteQuiz = (id) => model.deleteOne({ _id: id }); 
