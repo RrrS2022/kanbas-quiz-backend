@@ -41,9 +41,9 @@ export default function QuizRoutes(app) {
     res.json(status);
   };
 
-  app.get("/api/courses/:course/quizzes/:quizId", findQuizById);
-  app.get("/api/courses/:course/quizzes", findQuizzesForCourse);
-  app.post("/api/courses/:course/quizzes", createQuiz);
+  app.get("/api/courses/:courseId/quizzes/:quizId", findQuizById);
+  app.get("/api/courses/:courseId/quizzes", findQuizzesForCourse);
+  app.post("/api/courses/:courseId/quizzes", createQuiz);
   app.put("/api/quizzes/:quizId", updateQuiz);
   app.delete("/api/quizzes/:quizId", deleteQuiz);
   

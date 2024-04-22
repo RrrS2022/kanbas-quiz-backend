@@ -5,7 +5,7 @@ export const createQuiz = (quiz) => {
     //delete quiz._id;
     return model.create(quiz);
 };
-export const findAllQuizzes = (courseId) => model.find({ course: courseId });
+export const findAllQuizzes = (courseId) => model.find({ courseId: courseId });
 export const findQuizById = (id) => model.findById(id);
 export const findQuizByName = (quizName) => model.findOne({quizName});
 export const updateQuiz = (id, quiz) =>
