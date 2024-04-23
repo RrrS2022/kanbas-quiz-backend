@@ -1,17 +1,18 @@
 import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema({
-    courseId: {type: String, required: true},
+    _id: {type: String, required: true, unique: true},
     title: {type: String, required: true},
+    courseId: {type: String, required: true},
     type: {
         type: String,
         enum: ["Graded Quiz", "Practice Quiz", "Graded Survey", "Ungraded Survey"],
         required:true,
         default: "Graded Quiz"},
     points: {type: Number, required: true},
-    questionNumber: {type: number, requried: true},
+    questionNumber: {type: Number, requried: true},
     published: {type: Boolean, required: true},
-    group: {type: String, 
-        enum: ["Quizzes", "Exams", "Assignments", "Project"],
+    group: {type: String,
+        enum: ["QUIZZES", "EXAMS", "ASSIGNMENTS", "PROJECT"],
         default: "Quizzes"},
     shuffleAnswers: {type: Boolean, default: true},
     timelimit: {type: Number, default: 20},

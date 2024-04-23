@@ -1,39 +1,43 @@
-import db from "../Database/index.js";
-function QuizRoutes(app) {
-  app.put("/api/quizzes/:quiz", (req, res) => {
-    const { quiz } = req.params;
-    const quizIndex = db.quizzes.findIndex((m) => m._id === quiz);
-    if (quizIndex === -1) {
-      return res.status(404).send({ error: "Quiz not found" });
-    }
-    db.quizzes[quizIndex] = {
-      ...db.quizzes[quizIndex],
-      ...req.body,
-    };
-    res.send(db.quizzes[quizIndex]); 
-  });
-  
-  app.delete("/api/quizzes/:quiz", (req, res) => {
-    const { quiz } = req.params;
-    db.quizzes = db.quizzes.filter((m) => m._id !== quiz);
-    res.sendStatus(200);
-  });
+import * as dao from "./dao.js"
 
-  app.post("/api/courses/:course/quizzes", (req, res) => {
-    const { course } = req.params;
-    const newQuiz = {
-      ...req.body,
-      course: course,
-      _id: new Date().getTime().toString(),
-    };
-    db.quizzes.push(newQuiz);
-    res.send(newQuiz);
-  });
+export default function QuizRoutes(app) {
 
-  app.get("/api/courses/:course/quizzes", (req, res) => {
-    const { course } = req.params;
-    const quizzes = db.quizzes.filter((m) => m.course === course);
-    res.send(quizzes);
-  });
+  const findQuizById = async (req, res) => {
+    const {courseId, quizId} = req.params;
+    const quiz = await dao.findQuizById(quizId);
+    res.json(quiz);
+};
+
+  const findQuizzesForCourse = async (req, res) => {
+    const {courseId} = req.params;
+    const quizzes = await dao.findAllQuizzes(courseId);
+    res.json(quizzes);
+  };
+
+  const createQuiz = async (req, res) => {
+    const { courseId } = req.params;
+    const newQuiz = { ...req.body, courseId: courseId, _id: new Date().getTime().toString() };
+    const quiz = await dao.createQuiz(newQuiz);
+    res.json(quiz);
+};
+
+
+  const updateQuiz = async (req, res) => {
+    const { quizId } = req.params;
+    const status = await dao.updateQuiz(quizId, req.body);
+    res.json(status);
+  };
+
+  const deleteQuiz = async (req, res) => {
+    const {quizId} = req.params;
+    const status = await dao.deleteQuiz(quizId);
+    res.json(status);
+  };
+
+  app.get("/api/courses/:courseId/quizzes/:quizId", findQuizById);
+  app.get("/api/courses/:courseId/quizzes", findQuizzesForCourse);
+  app.post("/api/courses/:courseId/quizzes", createQuiz);
+  app.put("/api/quizzes/:quizId/editor", updateQuiz);
+  app.delete("/api/quizzes/:quizId", deleteQuiz);
+
 }
-export default QuizRoutes;
