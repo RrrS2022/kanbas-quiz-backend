@@ -13,7 +13,7 @@ const quizSchema = new mongoose.Schema({
     published: {type: Boolean, required: true},
     group: {type: String,
         enum: ["QUIZZES", "EXAMS", "ASSIGNMENTS", "PROJECT"],
-        default: "Quizzes"},
+        default: "QUIZZES"},
     shuffleAnswers: {type: Boolean, default: true},
     timelimit: {type: Number, default: 20},
     mutipleAttempts: {type: Boolean, default: false},
