@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const questionSchema = new mongoose.Schema(
   {
     _id: { type: String, required: true, unique: true },
@@ -15,7 +14,7 @@ const questionSchema = new mongoose.Schema(
     points: { type: Number },
     question: { type: String },
     options: [{ type: String }],
-    answers : { type: String }
+    answers : [{ type: String }]
   },
   { collection: "questions" }
 );

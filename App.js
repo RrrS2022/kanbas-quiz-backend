@@ -6,8 +6,10 @@ import ModuleRoutes from "./Kanbas/modules/routes.js";
 import AssignmentRoutes from "./Kanbas/assignments/routes.js";
 import QuizRoutes from "./Kanbas/quizzes/routes.js";
 import QuestionRoutes from "./Kanbas/questions/routes.js";
+import mongoose from "mongoose";
 
 import cors from "cors";
+mongoose.connect("mongodb://127.0.0.1:27017/kanbas-quiz");
 
 const app = express();
 app.use(cors());

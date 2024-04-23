@@ -25,7 +25,7 @@ export default [
   {
     _id: "Q101",
     title: "Propulsion quiz",
-    course: "RS101",
+    courseId: "RS101",
     type:  "Graded Quiz",
     points: 10,
     questionNumber: 10,
@@ -46,9 +46,9 @@ export default [
     viewResult: false,
   },
   {
-    _id: "6557fcb7a11aca237708374c1",
+    id: "6557fcb7a11aca237708374c1",
     title: "Combustion quiz",
-    course: "RS101",
+    courseId: "RS101",
     type:  "Graded Quiz",
     points: 10,
     questionNumber: 10,
@@ -69,9 +69,9 @@ export default [
     viewResult: false,
   },
   {
-    _id: "6557fcb7a11aca237708374d1",
+    id: "6557fcb7a11aca237708374d1",
     title: "Nozzle Design quiz",
-    course: "RS101",
+    courseId: "RS101",
     type:  "Graded Quiz",
     points: 10,
     questionNumber: 10,
